@@ -1,0 +1,8 @@
+Server Commands:
+================================
+
+LOGIN::<username>
+	LOGIN::UsernameAlreadyTaken		--> username taken by other player in match
+	LOGIN::Success					--> successful login
+
+

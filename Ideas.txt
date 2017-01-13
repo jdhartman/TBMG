@@ -1,0 +1,5 @@
+-Seperate server and client windows
+-Randomly generated worlds
+-2d top down
+-Turn order is randomized each round 
+-Players start off with one unit and will find resoures throughout the game to increase stats
