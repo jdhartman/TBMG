@@ -1,10 +1,11 @@
-
+import java.awt.Color;
 
 public class Main implements Runnable {
 
 	private static Thread thread;
 	private Window window;
 	private DrawGraphics dg;
+	private static Player player;
 	private boolean running = false;
 
 
@@ -16,6 +17,8 @@ public class Main implements Runnable {
 		window.createWindow();
 		dg = new DrawGraphics();
 		dg.start();
+
+		player = new Player(200.0, 200.0, Color.green);
 
 	}
 
@@ -54,7 +57,7 @@ public class Main implements Runnable {
 				ticksPerSecond = ticks;
 				ticks = 0;
 				longTime = before;
-				System.out.println("TPS: " + ticksPerSecond);
+				//System.out.println("TPS: " + ticksPerSecond);
 			}
 		}
 
@@ -63,7 +66,7 @@ public class Main implements Runnable {
 
 
 	public void tick() {
-		
+		player.tick();
 	}
 
 	public synchronized void start() {
@@ -89,5 +92,9 @@ public class Main implements Runnable {
 
 	public static int getTPS() {
 		return ticksPerSecond;
+	}
+
+	public static Player getPlayer() {
+		return player;
 	}
 }

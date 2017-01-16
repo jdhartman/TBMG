@@ -47,7 +47,7 @@ public class DrawGraphics extends JPanel implements Runnable{
 				FPS = updates;
 				updates = 0;
 				lastTime = before;
-				System.out.println("FPS: " + FPS);
+				//System.out.println("FPS: " + FPS);
 			}
 		}
 	}
@@ -62,14 +62,15 @@ public class DrawGraphics extends JPanel implements Runnable{
 		g.setColor(Color.black);
 		g.fillRect(0, 0, Window.getWidth(), Window.getHeight());
 
-		g.setColor(Color.blue);
-		g.fillRect(100, 100, 50, 50);
+		Main.getPlayer().render(g);
 
 		if(debugging) {
 			g.setColor(Color.white);
 			g.drawString("FPS: " + FPS, 10, 20);
 			g.drawString("TPS: " + Main.getTPS(), 10, 40);
 		}
+		
+
 		
 
 		/////////////////////////////////////////////////////////////////////////////////////////
