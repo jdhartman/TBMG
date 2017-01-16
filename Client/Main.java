@@ -9,7 +9,7 @@ public class Main implements Runnable {
 
 
 	private final int TPS = 60;
-	private int ticksPerSecond= 0;
+	private static int ticksPerSecond= 0;
 
 	public void init() {
 		window = new Window();
@@ -85,5 +85,9 @@ public class Main implements Runnable {
 		}finally {
 			System.exit(0);
 		}
+	}
+
+	public static int getTPS() {
+		return ticksPerSecond;
 	}
 }

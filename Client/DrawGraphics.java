@@ -5,8 +5,9 @@ public class DrawGraphics extends JPanel implements Runnable{
 	
 	private Thread thread;
 	private boolean running = false;
+	private static boolean debugging = true;
 
-	private static int maxFPS = 120;
+	private static int maxFPS = 80;
 	private static int FPS = 0;
 
 	private void init() {
@@ -64,6 +65,13 @@ public class DrawGraphics extends JPanel implements Runnable{
 		g.setColor(Color.blue);
 		g.fillRect(100, 100, 50, 50);
 
+		if(debugging) {
+			g.setColor(Color.white);
+			g.drawString("FPS: " + FPS, 10, 20);
+			g.drawString("TPS: " + Main.getTPS(), 10, 40);
+		}
+		
+
 		/////////////////////////////////////////////////////////////////////////////////////////
 		g.dispose();
 	}
@@ -96,6 +104,10 @@ public class DrawGraphics extends JPanel implements Runnable{
 		}catch(Exception e) {
 			System.out.println("Error in stopping thread in DrawGraphics");
 		}
+	}
+
+	public static void setDebugging(boolean b) {
+		debugging = b;
 	}
 
 }
