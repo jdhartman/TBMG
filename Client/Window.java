@@ -35,6 +35,18 @@ public class Window implements WindowListener{
 		frame.setSize(width, height);
 	}
 
+	public static JFrame getFrame() {
+		return frame;
+	}
+
+	public static int getWidth() {
+		return width;
+	}
+
+	public static int getHeight() {
+		return height;
+	}
+
 
 	//window listener methods
 	public void windowClosing(WindowEvent e) {

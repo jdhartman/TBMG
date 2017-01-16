@@ -4,6 +4,7 @@ public class Main implements Runnable {
 
 	private static Thread thread;
 	private Window window;
+	private DrawGraphics dg;
 	private boolean running = false;
 
 
@@ -13,6 +14,9 @@ public class Main implements Runnable {
 	public void init() {
 		window = new Window();
 		window.createWindow();
+		dg = new DrawGraphics();
+		dg.start();
+
 	}
 
 	public void run() {
@@ -41,7 +45,7 @@ public class Main implements Runnable {
 				try {
 					thread.sleep((timer - downTime) / 1000000);
 				}catch (Exception e) {
-					System.out.println("Error with thread sleeping in Main Run");
+					
 				}
 			}
 
@@ -57,14 +61,9 @@ public class Main implements Runnable {
 		stop();
 	}
 
-	int i = 0;
+
 	public void tick() {
-		i++;
-		if(i > 500) {
-			System.out.println("changing resolution");
-			Window.setResolution(1920);
-			i = 0;
-		}
+		
 	}
 
 	public synchronized void start() {
@@ -79,9 +78,7 @@ public class Main implements Runnable {
 		running = false;
 
 		try {
-			System.out.println("before");
 			thread.interrupt();
-			
 		}catch (Exception e) {
 			System.out.println("Error joinning thread @ Main Stop");
 			e.printStackTrace();
