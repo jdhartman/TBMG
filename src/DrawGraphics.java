@@ -58,11 +58,16 @@ public class DrawGraphics extends JPanel implements Runnable{
 		/*draw stuff below*/
 		/////////////////////////////////////////////////////////////////////////////////////////
 
-		//draw test color and block
-		g.setColor(Color.black);
-		g.fillRect(0, 0, Window.getWidth(), Window.getHeight());
 
-		Main.getPlayer().render(g);
+		int currentState = GameStateManager.getCurrentState();
+		if(currentState == GameStateManager.MAIN_MENU) {
+
+		}else if(currentState == GameStateManager.GAME) {
+			Main.getPlayer().render(g);
+		}else if(currentState == GameStateManager.OPTIONS) {
+
+		}
+		
 
 		if(debugging) {
 			g.setColor(Color.white);
