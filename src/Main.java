@@ -21,8 +21,9 @@ public class Main implements Runnable {
 		input = new Input();
 		window.getFrame().addKeyListener(input);
 
+		GameStateManager.setGameState(GameStateManager.MAIN_MENU);
 
-		player = new Player(200.0, 200.0, Color.green);
+
 
 	}
 
@@ -70,7 +71,13 @@ public class Main implements Runnable {
 
 
 	public void tick() {
-		player.tick();
+		int state = GameStateManager.getCurrentState();
+		if(state == GameStateManager.MAIN_MENU) {
+
+		}else if(state == GameStateManager.GAME){
+			Player.tick();
+		}
+		
 	}
 
 	public synchronized void start() {
@@ -98,7 +105,4 @@ public class Main implements Runnable {
 		return ticksPerSecond;
 	}
 
-	public static Player getPlayer() {
-		return player;
-	}
 }

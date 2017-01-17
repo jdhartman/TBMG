@@ -2,23 +2,26 @@ import java.awt.*;
 
 public class Player {
 
-	private double x;
-	private double y;
-	private Color color;
+	private static double x = 100;
+	private static double y = 100;
+	private static Color color = Color.red;
 
-	public Player(double x, double y, Color color) {
-		this.x = x;
-		this.y = y;
-		this.color = color;
-	}
-
-	public void tick() {
+	public static void tick() {
 		
 	}
 
-	public void render(Graphics g) {
+	public static void render(Graphics g) {
 		g.setColor(color);
 		g.fillOval((int)x, (int)y, 20, 20);
+	}
+
+	public static void setPosition(double i, double j) {
+		x = i;
+		y = j;
+	}
+
+	public static void setColor(Color c) {
+		color = c;
 	}
 
 }

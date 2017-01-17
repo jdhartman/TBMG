@@ -60,10 +60,11 @@ public class DrawGraphics extends JPanel implements Runnable{
 
 
 		int currentState = GameStateManager.getCurrentState();
-		if(currentState == GameStateManager.MAIN_MENU) {
 
+		if(currentState == GameStateManager.MAIN_MENU) {
+			MainMenu.render(g);
 		}else if(currentState == GameStateManager.GAME) {
-			Main.getPlayer().render(g);
+			Player.render(g);
 		}else if(currentState == GameStateManager.OPTIONS) {
 
 		}
