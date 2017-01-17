@@ -50,7 +50,7 @@ public class Window implements WindowListener{
 
 	//window listener methods
 	public void windowClosing(WindowEvent e) {
-		JOptionPane.showMessageDialog(null, "Clossing Game");
+		JOptionPane.showMessageDialog(null, "Closing Game");
 		Main main = new Main();
 		main.stop();
 	}

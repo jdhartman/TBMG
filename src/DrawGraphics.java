@@ -18,11 +18,11 @@ public class DrawGraphics extends JPanel implements Runnable{
 
 		init();
 		
-		long before = System.nanoTime();
-		long after = before;
+		long before;
+		long after;
 		long second = 1000000000;
 		long timer = second / maxFPS;
-		long lastTime = before;
+		long lastTime = System.nanoTime();
 
 		int updates = 0;
 

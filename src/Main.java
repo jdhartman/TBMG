@@ -30,11 +30,11 @@ public class Main implements Runnable {
 
 		init();
 		
-		long before = System.nanoTime();
-		long after = before;
+		long before;
+		long after;
 		long second = 1000000000;
 		long timer = second / TPS;
-		long longTime = before;
+		long longTime = System.nanoTime();
 
 		int ticks = 0;
 
