@@ -6,6 +6,7 @@ public class Main implements Runnable {
 	private Window window;
 	private DrawGraphics dg;
 	private static Player player;
+	private static Input input;
 	private boolean running = false;
 
 
@@ -17,6 +18,9 @@ public class Main implements Runnable {
 		window.createWindow();
 		dg = new DrawGraphics();
 		dg.start();
+		input = new Input();
+		window.getFrame().addKeyListener(input);
+
 
 		player = new Player(200.0, 200.0, Color.green);
 

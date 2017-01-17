@@ -111,4 +111,8 @@ public class DrawGraphics extends JPanel implements Runnable{
 		debugging = b;
 	}
 
+	public static boolean isDebugging() {
+		return debugging;
+	}
+
 }
